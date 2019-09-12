@@ -12,5 +12,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('temps', Settings\TempController::class);
-
+    $router->resource('articles', ArticleController::class);
 });
