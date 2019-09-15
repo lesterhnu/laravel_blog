@@ -11,6 +11,9 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('admin.home');
-    $router->resource('temps', Settings\TempController::class);
-    $router->resource('articles', ArticleController::class);
+    $router->resource('articles/list', ArticleController::class);
+    $router->resource('articles/tags', TagController::class);
+    $router->resource('settings', SettingsController::class);
+    $router->resource('categories', CategoryController::class);
+
 });

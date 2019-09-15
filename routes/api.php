@@ -17,3 +17,4 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 Route::get('/getUserInfo','api\UserController@getUserInfo')->name('getUserInfo');
+Route::get("/getArticleList/{type?}","api\IndexController@articleList")->name('getArticleList');

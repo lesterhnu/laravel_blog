@@ -12,6 +12,16 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        DB::table('articles')->
+        DB::table('articles')->truncate();
+        for ($i=0;$i<20;$i++){
+            DB::table('articles')->insert([
+                'title' => $faker->name,
+                'author' => $faker->name,
+                'sub_title' => $faker->address,
+                'content' => $faker->year,
+                'created_at' => $faker->dateTime,
+                'updated_at' => $faker->dateTime
+            ]);
+        }
     }
 }

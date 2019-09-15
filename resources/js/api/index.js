@@ -1,19 +1,6 @@
-import request from '../utils/index'
-export const getUserInfo=function(){
-    var url = "/getUserInfo"
-    var data = {
-        id:1001
-    }
-    return request(url,'post',data).then(res=>{
-        if(res.code==1000){
-            console.log(res.msg)
-        }else{
-            console.log('error')
-        }
-        return request('/getPhoneNUmber')
-    }).then(res=>{
-        if(res.code==1000){
-            console.log(res.phone_number)
-        }
-    })
+//import request from '../utils/index'
+import axios from 'axios'
+// axios.defaults.baseURL('http://www.blog.com/api')
+export var getArticleList = function(cate_id){
+    return axios.get(`http://www.blog.com/api/getArticleList`,cate_id).then(res=>res.data)
 }
